@@ -1,4 +1,4 @@
-import { expandAndFlatten, range } from '.'
+import { expandAndFlatten, range, combinations, parseCombinations } from '.'
 
 test('range', () => {
   expect(range([1], 1)).toEqual([1])
@@ -64,6 +64,9 @@ test('expandAndFlatten variables and expansion', () => {
     'visible'
   ])
   expect(
+    expandAndFlatten('1 [6 36 216..2000]rem', emptyVars, 'px').sort()
+  ).toEqual(['1296rem', '1px', '216rem', '36rem', '6rem'])
+  expect(
     expandAndFlatten(
       '0 1 2 3 [4 8 16..1024] [6 12 24..1536] 11111111 50% 100% 100vh 100vw',
       emptyVars,
@@ -84,7 +87,76 @@ test('expandAndFlatten variables and expansion', () => {
     expandAndFlatten('[width height top left down right]', emptyVars)
   ).toEqual(['width', 'height', 'top', 'left', 'down', 'right'])
   expect(expandAndFlatten('[0 1 auto]', emptyVars)).toEqual(['0', '1', 'auto'])
+  expect(expandAndFlatten('"[0 1] [0 1] [0 auto]"', emptyVars)).toEqual([
+    '0 0 0',
+    '1 0 0',
+    '0 1 0',
+    '1 1 0',
+    '0 0 auto',
+    '1 0 auto',
+    '0 1 auto',
+    '1 1 auto'
+  ])
   expect(
-    expandAndFlatten('"[0 1 auto] [0 1 auto] [0 auto]"', emptyVars)
-  ).toEqual(['"[0 1 auto] [0 1 auto] [0 auto]"'])
+    expandAndFlatten('1 2 [3 4 auto]em [5 6]rem', emptyVars, 'px')
+  ).toEqual(['1px', '2px', '3em', '4em', 'auto', '5rem', '6rem'])
+})
+
+test('combinations', () => {
+  const ogTestArr = [
+    [1, 2],
+    [3, 4],
+    [5, 6, 7]
+  ]
+  const result = combinations(ogTestArr)
+
+  expect(result).not.toBe(ogTestArr)
+  expect(result).toEqual([
+    [1, 3, 5],
+    [2, 3, 5],
+    [1, 4, 5],
+    [2, 4, 5],
+    [1, 3, 6],
+    [2, 3, 6],
+    [1, 4, 6],
+    [2, 4, 6],
+    [1, 3, 7],
+    [2, 3, 7],
+    [1, 4, 7],
+    [2, 4, 7]
+  ])
+  expect(combinations([])).toEqual([[]])
+  expect(combinations([[1], [2], [3]])).toEqual([[1, 2, 3]])
+})
+
+test('parseCombinations', () => {
+  const vars = new Map<string, string[]>([
+    ['alpha', ['beta']],
+    ['gamma', ['a', 'b', 'c']]
+  ])
+  expect(parseCombinations('{alpha}', vars, '')).toEqual(['beta'])
+  expect(parseCombinations(' {alpha}', vars, '')).toEqual([' beta'])
+  expect(parseCombinations('{beta}', vars, '')).toEqual(['{beta}'])
+  expect(parseCombinations(' {beta}', vars, '')).toEqual([' {beta}'])
+  expect(parseCombinations('{beta}', vars, '')).toEqual(['{beta}'])
+  expect(parseCombinations(' {beta}', vars, '')).toEqual([' {beta}'])
+  expect(parseCombinations('{gamma}', vars, '')).toEqual(['a', 'b', 'c'])
+  expect(parseCombinations('{gamma} {gamma}', vars, '')).toEqual([
+    'a a',
+    'b a',
+    'c a',
+    'a b',
+    'b b',
+    'c b',
+    'a c',
+    'b c',
+    'c c'
+  ])
+  expect(
+    parseCombinations('alpha:{alpha} beta:{beta} gamma:{gamma}', vars, '')
+  ).toEqual([
+    'alpha:beta beta:{beta} gamma:a',
+    'alpha:beta beta:{beta} gamma:b',
+    'alpha:beta beta:{beta} gamma:c'
+  ])
 })

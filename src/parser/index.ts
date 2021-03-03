@@ -1,5 +1,6 @@
 const numberRegex = /^[+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?$/
 const rangeRegex = /^\[([+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?)( ([+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?))*\.\.([+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?)\]$/
+const bracketWithUnit = /\]([a-zA-Z]+|%)?$/
 
 type Expression =
   | {
@@ -163,46 +164,33 @@ export const expandAndFlatten = (
       }
 
       if (quoteState === 0) {
-        parsedWords.push(words[i])
+        parsedWords.push(word)
       } else {
         const lastChar = word[word.length - 1]
-        if (quoteState === 1 && lastChar === "'") {
+        if (
+          (quoteState === 1 && lastChar === "'") ||
+          (quoteState === 2 && lastChar === '"')
+        ) {
           quoteState = 0
           parsedWords.push(
-            words
-              .slice(firstWordIndex, i + 1)
-              .join(' ')
-              .slice(1, -1)
-          )
-        }
-        if (quoteState === 2 && lastChar === '"') {
-          quoteState = 0
-          parsedWords.push(
-            words
-              .slice(firstWordIndex, i + 1)
-              .join(' ')
-              .slice(1, -1)
-          )
-        }
-        if (quoteState === 3 && lastChar === ']') {
-          quoteState = 0
-          const listSource = words.slice(firstWordIndex, i + 1).join(' ')
-
-          if (rangeRegex.test(listSource)) {
-            const [_lead, _last] = listSource.slice(1, -1).split('..')
-            const lead = _lead.split(' ').map((n) => parseFloat(n))
-            const last = parseFloat(_last)
-            parsedWords.push(
-              ...range(lead, last).map((n: number) => n.toString())
+            ...parseCombinations(
+              words
+                .slice(firstWordIndex, i + 1)
+                .join(' ')
+                .slice(1, -1),
+              prevVariables,
+              defaultUnit
             )
-          } else {
-            parsedWords.push(
-              ...expandAndFlatten(
-                listSource.slice(1, -1),
-                prevVariables,
-                defaultUnit
-              )
-            )
+          )
+        } else if (quoteState === 3) {
+          const wordList = parseGroup(
+            words.slice(firstWordIndex, i + 1).join(' '),
+            prevVariables,
+            defaultUnit
+          )
+          if (wordList !== null) {
+            quoteState = 0
+            parsedWords.push(...wordList)
           }
         }
       }
@@ -232,4 +220,82 @@ export const expandAndFlatten = (
   )
 
   return withUnit
+}
+
+export const parseGroup = (
+  groupSource: string,
+  prevVariables: Map<string, string[]>,
+  defaultUnit: string
+): null | string[] => {
+  const bracketMatch = groupSource.match(bracketWithUnit)
+  if (bracketMatch === null) return null
+
+  const unit: string | null = bracketMatch[1] ?? null
+  if (unit) {
+    // remove trailing unit for rangeRegex
+    groupSource = groupSource.slice(0, -unit.length)
+  }
+
+  const mergedUnit = unit ?? defaultUnit
+
+  let words: string[]
+
+  if (rangeRegex.test(groupSource)) {
+    const [_lead, _last] = groupSource.slice(1, -1).split('..')
+    const lead = _lead.split(' ').map((n) => parseFloat(n))
+    const last = parseFloat(_last)
+    words = range(lead, last).map((n: number) => n + mergedUnit)
+  } else {
+    words = expandAndFlatten(
+      groupSource.slice(1, -1),
+      prevVariables,
+      mergedUnit
+    )
+  }
+
+  return words
+}
+
+export const parseCombinations = (
+  quoted: string,
+  prevVariables: Map<string, string[]>,
+  defaultUnit: string
+): string[] => {
+  const results: string[][] = []
+
+  const expandableRegex = /\{([^\} ]+)\}|\[[^\]]+\]([a-zA-Z]+|%)?/g
+  let quoteMatch: RegExpExecArray | null
+  let startOfCurrent = 0
+  while ((quoteMatch = expandableRegex.exec(quoted)) !== null) {
+    const toExpand = quoteMatch[0]
+    const isVariable = (quoteMatch[1] ?? '').length > 0
+    let values: string[] | null
+    if (isVariable) {
+      values = prevVariables.get(quoteMatch[1]) ?? null
+    } else {
+      values = parseGroup(toExpand, prevVariables, defaultUnit)
+    }
+    if (values !== null) {
+      results.push([quoted.slice(startOfCurrent, quoteMatch.index)])
+      startOfCurrent = quoteMatch.index + quoteMatch[0].length
+      results.push(values)
+    }
+  }
+  results.push([quoted.slice(startOfCurrent)])
+
+  return combinations(results).map((combination: string[]): string =>
+    combination.join('')
+  )
+}
+
+// TODO: should be sorted by first prop to last
+export const combinations = <T>(mods: T[][]): T[][] => {
+  let list: T[][] = [[]]
+  let index = 0
+  while (index < mods.length) {
+    list = mods[index++].flatMap((option) =>
+      list.map((prev) => prev.concat([option]))
+    )
+  }
+  return list
 }

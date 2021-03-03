@@ -21,7 +21,7 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es5"
+    "target": "es2019"
   },
   "include": ["src/**/*"],
   "exclude": ["src/**/*.stories.*"]
