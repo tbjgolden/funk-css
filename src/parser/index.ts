@@ -1,6 +1,6 @@
 const numberRegex = /^[+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?$/
 const rangeRegex = /^\[([+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?)( ([+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?))*\.\.([+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?)\]$/
-const bracketWithUnit = /\]([a-zA-Z]+|%)?$/
+const bracketWithUnit = /\]([a-zA-Z]+|%|)$/
 
 type Expression =
   | {
@@ -132,12 +132,12 @@ export const generateRange = (expr: Expression): number[] => {
 }
 
 export const expandAndFlatten = (
-  str: string,
+  source: string,
   prevVariables: Map<string, string[]>,
   defaultUnit = ''
 ): string[] => {
   // 0 no quote, 1 single, 2 double, 3 square bracket
-  const words = str.split(' ')
+  const words = source.split(' ')
 
   const parsedWords: string[] = []
 
@@ -298,4 +298,156 @@ export const combinations = <T>(mods: T[][]): T[][] => {
     )
   }
   return list
+}
+
+// strips comments, checks syntax and determines line types
+// same as js - except `://` is not a block comment
+export const stripComments = (fcss: string): string => {
+  let curr = ''
+  let inBlockComment = false
+  let inLineComment = false
+  for (let i = 0; i < fcss.length; i++) {
+    const c0 = fcss.charAt(i)
+    const c1 = i < fcss.length - 1 ? fcss.charAt(i + 1) : ''
+
+    if (inBlockComment) {
+      if (c0 === '*' && c1 === '/') {
+        inBlockComment = false
+        i += 1
+      }
+      continue
+    } else if (inLineComment) {
+      if (c1 === '\n') {
+        inLineComment = false
+      }
+      continue
+    }
+
+    if (c0 === '/' && c1 === '/') {
+      if (i === 0 || fcss.charAt(i - 1) !== ':') {
+        // line comment
+        inLineComment = true
+        i += 1
+        continue
+      }
+    } else if (c0 === '/' && c1 === '*') {
+      // block comment
+      inBlockComment = true
+      i += 1
+      continue
+    }
+
+    curr += c0
+  }
+
+  if (inBlockComment) {
+    throw new Error('Block comment opened but not closed')
+  }
+
+  return curr
+}
+
+type StatementType = 'setting' | 'assignment' | 'at-rule' | 'declaration'
+
+const assignmentRegex = /^([^\[\]\{\}\(\) \t]+)[ \t]*=(%|[a-zA-Z]+|)[ \t]+(.*)$/
+const settingRegex = /^%([^: \t]+)[ \t]*:[ \t]+(.*)$/
+const atRuleRegex = /^@([a-z\-]+)[ \t]*(.*)$/
+
+const urlRegex = /^((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)$/
+
+export const parseStatements = (fcss: string): [StatementType, string][] => {
+  const results: [StatementType, string][] = []
+  // non-empty lines without comments
+  const lines = stripComments(fcss)
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean)
+
+  for (const line of lines) {
+    if (line.startsWith('%')) {
+      results.push(['setting', line])
+    } else if (line.startsWith('@')) {
+      results.push(['at-rule', line])
+    } else if (assignmentRegex.test(line)) {
+      results.push(['assignment', line])
+    } else {
+      results.push(['declaration', line])
+    }
+  }
+
+  return results
+}
+
+type Settings = {
+  breakpoints: string[]
+  pseudo: string[]
+}
+
+const defaultSettings = {
+  breakpoints: [],
+  pseudo: ['all']
+}
+
+const validSettings = new Set(Object.keys(defaultSettings))
+
+type Evaluation = {
+  settings: Settings
+  functionalRules: FunctionalRule[]
+}
+
+type FunctionalRule = {
+  property: string
+  value: string
+  extra: [string, string][]
+}
+
+export const evaluate = (fcss: string): Evaluation => {
+  const settings: Settings = defaultSettings
+  const variables = new Map<string, string[]>()
+  const functionalRules: FunctionalRule[] = []
+
+  for (const [type, statement] of parseStatements(fcss)) {
+    if (type === 'assignment') {
+      const [, variableName, unit, value] = statement.match(
+        assignmentRegex
+      ) as [never, string, string, string]
+
+      variables.set(variableName, expandAndFlatten(value, variables, unit))
+    } else if (type === 'at-rule') {
+      const atRuleMatchArray = statement.match(atRuleRegex)
+      if (!atRuleMatchArray) throw new Error('Invalid syntax for at-rule')
+
+      const [, atRule, value] = atRuleMatchArray
+
+      if (atRule === 'import') {
+        if (urlRegex.test(value)) {
+          // import urlRegex
+        } else {
+          throw new Error(`Invalid URL for @import`)
+        }
+      } else {
+        throw new Error(`No support for at-rule "@${atRule}"`)
+      }
+    } else if (type === 'setting') {
+      const settingMatchArray = statement.match(settingRegex)
+      if (!settingMatchArray) throw new Error('Invalid syntax for setting')
+
+      const [, setting, value] = settingMatchArray
+
+      if (validSettings.has(setting)) {
+        const validSetting = setting as keyof Settings
+        settings[validSetting] = expandAndFlatten(value, variables)
+      } else {
+        throw new Error(`Unknown setting "${setting}"`)
+      }
+    } else {
+      // declaration or invalid syntax
+      console.log(statement)
+    }
+  }
+
+  return {
+    settings,
+    functionalRules
+  }
 }
