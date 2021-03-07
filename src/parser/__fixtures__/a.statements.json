@@ -1,0 +1,41 @@
+[
+  ["setting", "%breakpoints: 600 800 1000 1200"],
+  ["setting", "%pseudo: all"],
+  ["assignment", "small-scale =px 0 1 2 3 4"],
+  [
+    "assignment",
+    "scale =px {small-scale} [8 16 32..1024] [6 12 24..1536] 11111111 50% 100% 100vh 100vw"
+  ],
+  [
+    "assignment",
+    "scale-with-negative =px {scale} -1 -2 -3 [-4 -8 -16..-1024] [-6 -12 -24..-1536] -11111111 -50% -100% -100vh -100vw"
+  ],
+  ["assignment", "overflow = hidden scroll auto visible"],
+  ["assignment", "headerTypeScale =px 64 48 32"],
+  ["assignment", "copyTypeScale =px 24 16 12"],
+  ["assignment", "direction = top left down right"],
+  ["assignment", "colors = red black blue white"],
+  [
+    "at-rule",
+    "@import https://gist.githubusercontent.com/tbjgolden/3277a380d335803632765c2647c1a028/raw/f9300f4910c1a517820c87c0136cd593c07c13b8/hard-reset.css"
+  ],
+  ["declaration", "[width height]: {scale}"],
+  ["declaration", "{direction}: {scale}"],
+  ["declaration", "color: {colors}"],
+  ["declaration", "background-color: {colors}"],
+  ["declaration", "font-size: {headerTypeScale}; line-height: 1.2"],
+  ["declaration", "font-size: {copyTypeScale}; line-height: 1.3"],
+  ["declaration", "padding: {scale}"],
+  ["declaration", "padding-{direction}: {scale}"],
+  ["declaration", "background-position: \"{xLoc} {yLoc}\""],
+  ["declaration", "border-{direction}: \"{small-scale} solid {colors}\""],
+  ["declaration", "flex: \"[0 1 auto] [0 1 auto] [0 auto]\""],
+  ["declaration", "overflow: \"{overflow} {overflow}\""],
+  ["declaration", "display: inline block flex none inline-block inline-flex"],
+  ["declaration", "text-decoration: line-through underline none"],
+  ["declaration", "font-style: italic normal"],
+  ["declaration", "line-height: 1 1.2 1.3"],
+  ["declaration", "font-weight: 400 600 700"],
+  ["declaration", "margin: {scale-with-negative}"],
+  ["declaration", "margin-{direction}: {scale-with-negative}"]
+]

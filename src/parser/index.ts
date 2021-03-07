@@ -208,7 +208,10 @@ export const expandAndFlatten = (
 
   for (let i = parsedWords.length - 1; i >= 0; i--) {
     const word = parsedWords[i]
-    if (containsExpandable.test(word)) {
+    if (word.length > 2 && word[0] === '{' && word[word.length - 1] === '}') {
+      const key = word.slice(1, -1).trim()
+      parsedWords.splice(i, 1, ...(prevVariables.get(key) ?? [word]))
+    } else if (containsExpandable.test(word)) {
       const wordFragments: string[] = word.split('-')
       const parts: string[][] = []
 
@@ -421,7 +424,7 @@ type Evaluation = {
 type FunctionalRule = {
   property: string
   value: string
-  extra: [string, string][]
+  extra?: [string, string][]
 }
 
 export const evaluate = (fcss: string): Evaluation => {
@@ -466,7 +469,10 @@ export const evaluate = (fcss: string): Evaluation => {
     } else {
       // declaration or invalid syntax
       const declarationGroup = statement.split(';').map((s: string) => s.trim())
-      for (let i = 0; i < declarationGroup.length; i++) {
+
+      const extra: [string, string][] = []
+
+      for (let i = 1; i < declarationGroup.length; i++) {
         const declaration = declarationGroup[i]
         const declarationMatchArray = declaration.match(declarationRegex)
         if (!declarationMatchArray) throw new Error('Invalid syntax')
@@ -477,14 +483,52 @@ export const evaluate = (fcss: string): Evaluation => {
           string
         ]
 
-        const property = rawProperty.trim()
-        const value = rawValue.trim()
-
-        console.log({ property, value })
-        console.log(expandAndFlatten(property, variables))
+        extra.push([rawProperty.trim(), rawValue.trim()])
       }
+
+      const declaration = declarationGroup[0]
+      const declarationMatchArray = declaration.match(declarationRegex)
+      if (!declarationMatchArray) throw new Error('Invalid syntax')
+
+      const [, rawProperty, rawValue] = declarationMatchArray as [
+        never,
+        string,
+        string
+      ]
+
+      const property = rawProperty.trim()
+      const value = rawValue.trim()
+
+      const declarations = combinations([
+        expandAndFlatten(property, variables),
+        expandAndFlatten(value, variables)
+      ]) as [string, string][]
+
+      functionalRules.push(
+        ...declarations.map(
+          ([property, value]): FunctionalRule => {
+            const rule: FunctionalRule = {
+              property,
+              value
+            }
+            if (extra.length > 0) {
+              rule.extra = extra
+            }
+            return rule
+          }
+        )
+      )
     }
   }
+
+  functionalRules.sort(
+    ({ property: p1, value: v1 }, { property: p2, value: v2 }) => {
+      if (p1 === p2) {
+        return v1 > v2 ? 1 : -1
+      }
+      return p1 > p2 ? 1 : -1
+    }
+  )
 
   return {
     settings,
