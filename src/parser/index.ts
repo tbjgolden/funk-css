@@ -1,6 +1,7 @@
 const numberRegex = /^[+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?$/
 const rangeRegex = /^\[([+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?)( ([+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?))*\.\.([+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?)\]$/
-const bracketWithUnit = /\]([a-zA-Z]+|%|)$/
+const bracketWithUnitRegex = /\]([a-zA-Z]+|%|)$/
+const containsExpandable = /[\{\}\[\]]/
 
 type Expression =
   | {
@@ -207,11 +208,30 @@ export const expandAndFlatten = (
 
   for (let i = parsedWords.length - 1; i >= 0; i--) {
     const word = parsedWords[i]
-    if (word.length > 2 && word[0] === '{' && word[word.length - 1] === '}') {
-      const variableValue = prevVariables.get(word.slice(1, -1))
-      if (variableValue !== undefined) {
-        parsedWords.splice(i, 1, ...variableValue)
+    if (containsExpandable.test(word)) {
+      const wordFragments: string[] = word.split('-')
+      const parts: string[][] = []
+
+      for (const wordFragment of wordFragments) {
+        if (
+          wordFragment.length > 2 &&
+          wordFragment[0] === '{' &&
+          wordFragment[wordFragment.length - 1] === '}'
+        ) {
+          const key = wordFragment.slice(1, -1).trim()
+          parts.push(prevVariables.get(key) ?? [wordFragment])
+        } else if (wordFragment.indexOf('[') === 0) {
+          parts.push(expandAndFlatten(wordFragment, prevVariables))
+        } else {
+          parts.push([wordFragment])
+        }
       }
+
+      parsedWords.splice(
+        i,
+        1,
+        ...combinations(parts).map((fragments: string[]) => fragments.join('-'))
+      )
     }
   }
 
@@ -227,7 +247,7 @@ export const parseGroup = (
   prevVariables: Map<string, string[]>,
   defaultUnit: string
 ): null | string[] => {
-  const bracketMatch = groupSource.match(bracketWithUnit)
+  const bracketMatch = groupSource.match(bracketWithUnitRegex)
   if (bracketMatch === null) return null
 
   const unit: string | null = bracketMatch[1] ?? null
@@ -352,6 +372,7 @@ type StatementType = 'setting' | 'assignment' | 'at-rule' | 'declaration'
 const assignmentRegex = /^([^\[\]\{\}\(\) \t]+)[ \t]*=(%|[a-zA-Z]+|)[ \t]+(.*)$/
 const settingRegex = /^%([^: \t]+)[ \t]*:[ \t]+(.*)$/
 const atRuleRegex = /^@([a-z\-]+)[ \t]*(.*)$/
+const declarationRegex = /^([^:\n]+):[ \t]*([^;\n]+)(;[ \t]*([^:\n]+)[ \t]*:[ \t]*([^;\n]+))*$/
 
 const urlRegex = /^((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)$/
 
@@ -370,8 +391,10 @@ export const parseStatements = (fcss: string): [StatementType, string][] => {
       results.push(['at-rule', line])
     } else if (assignmentRegex.test(line)) {
       results.push(['assignment', line])
-    } else {
+    } else if (declarationRegex.test(line)) {
       results.push(['declaration', line])
+    } else {
+      throw new Error(`Invalid syntax`)
     }
   }
 
@@ -442,7 +465,24 @@ export const evaluate = (fcss: string): Evaluation => {
       }
     } else {
       // declaration or invalid syntax
-      console.log(statement)
+      const declarationGroup = statement.split(';').map((s: string) => s.trim())
+      for (let i = 0; i < declarationGroup.length; i++) {
+        const declaration = declarationGroup[i]
+        const declarationMatchArray = declaration.match(declarationRegex)
+        if (!declarationMatchArray) throw new Error('Invalid syntax')
+
+        const [, rawProperty, rawValue] = declarationMatchArray as [
+          never,
+          string,
+          string
+        ]
+
+        const property = rawProperty.trim()
+        const value = rawValue.trim()
+
+        console.log({ property, value })
+        console.log(expandAndFlatten(property, variables))
+      }
     }
   }
 
