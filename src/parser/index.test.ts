@@ -192,7 +192,7 @@ test('stripComments', () => {
 
   expect(stripComments(`https://tom.bio\n`)).toBe(`https://tom.bio\n`)
   expect(stripComments(`https //tom.bio\n`)).toBe(`https \n`)
-  expect(stripComments(`https //tom.bio\n`)).toBe(`https \n`)
+  expect(stripComments(`https//tom.bio\n`)).toBe(`https\n`)
 
   expect(() => stripComments(`/*aaa\n\n`)).toThrow()
   expect(() => stripComments(`aa/*aaa\n\n`)).toThrow()
