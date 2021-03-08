@@ -22,7 +22,39 @@
     },
     {
       "property": "background-position",
-      "value": "{xLoc} {yLoc}"
+      "value": "center bottom"
+    },
+    {
+      "property": "background-position",
+      "value": "center center"
+    },
+    {
+      "property": "background-position",
+      "value": "center top"
+    },
+    {
+      "property": "background-position",
+      "value": "left bottom"
+    },
+    {
+      "property": "background-position",
+      "value": "left center"
+    },
+    {
+      "property": "background-position",
+      "value": "left top"
+    },
+    {
+      "property": "background-position",
+      "value": "right bottom"
+    },
+    {
+      "property": "background-position",
+      "value": "right center"
+    },
+    {
+      "property": "background-position",
+      "value": "right top"
     },
     {
       "property": "border-down",
