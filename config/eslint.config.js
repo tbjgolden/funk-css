@@ -53,5 +53,16 @@ module.exports = {
     'node_modules/',
     '/*.js',
     '/*.json'
+  ],
+  overrides: [
+    {
+      files: ['research/**'],
+      env: {
+        node: true
+      },
+      rules: {
+        '@typescript-eslint/no-var-requires': 0
+      }
+    }
   ]
 }

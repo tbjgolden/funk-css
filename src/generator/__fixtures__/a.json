@@ -1,0 +1,2878 @@
+{
+  "settings": {
+    "breakpoints": ["600", "800", "1000", "1200"],
+    "pseudo": ["all"]
+  },
+  "functionalRules": [
+    {
+      "property": "background-color",
+      "value": "black"
+    },
+    {
+      "property": "background-color",
+      "value": "blue"
+    },
+    {
+      "property": "background-color",
+      "value": "red"
+    },
+    {
+      "property": "background-color",
+      "value": "white"
+    },
+    {
+      "property": "background-position",
+      "value": "center bottom"
+    },
+    {
+      "property": "background-position",
+      "value": "center center"
+    },
+    {
+      "property": "background-position",
+      "value": "center top"
+    },
+    {
+      "property": "background-position",
+      "value": "left bottom"
+    },
+    {
+      "property": "background-position",
+      "value": "left center"
+    },
+    {
+      "property": "background-position",
+      "value": "left top"
+    },
+    {
+      "property": "background-position",
+      "value": "right bottom"
+    },
+    {
+      "property": "background-position",
+      "value": "right center"
+    },
+    {
+      "property": "background-position",
+      "value": "right top"
+    },
+    {
+      "property": "border-down",
+      "value": "0px solid black"
+    },
+    {
+      "property": "border-down",
+      "value": "0px solid blue"
+    },
+    {
+      "property": "border-down",
+      "value": "0px solid red"
+    },
+    {
+      "property": "border-down",
+      "value": "0px solid white"
+    },
+    {
+      "property": "border-down",
+      "value": "1px solid black"
+    },
+    {
+      "property": "border-down",
+      "value": "1px solid blue"
+    },
+    {
+      "property": "border-down",
+      "value": "1px solid red"
+    },
+    {
+      "property": "border-down",
+      "value": "1px solid white"
+    },
+    {
+      "property": "border-down",
+      "value": "2px solid black"
+    },
+    {
+      "property": "border-down",
+      "value": "2px solid blue"
+    },
+    {
+      "property": "border-down",
+      "value": "2px solid red"
+    },
+    {
+      "property": "border-down",
+      "value": "2px solid white"
+    },
+    {
+      "property": "border-down",
+      "value": "3px solid black"
+    },
+    {
+      "property": "border-down",
+      "value": "3px solid blue"
+    },
+    {
+      "property": "border-down",
+      "value": "3px solid red"
+    },
+    {
+      "property": "border-down",
+      "value": "3px solid white"
+    },
+    {
+      "property": "border-down",
+      "value": "4px solid black"
+    },
+    {
+      "property": "border-down",
+      "value": "4px solid blue"
+    },
+    {
+      "property": "border-down",
+      "value": "4px solid red"
+    },
+    {
+      "property": "border-down",
+      "value": "4px solid white"
+    },
+    {
+      "property": "border-left",
+      "value": "0px solid black"
+    },
+    {
+      "property": "border-left",
+      "value": "0px solid blue"
+    },
+    {
+      "property": "border-left",
+      "value": "0px solid red"
+    },
+    {
+      "property": "border-left",
+      "value": "0px solid white"
+    },
+    {
+      "property": "border-left",
+      "value": "1px solid black"
+    },
+    {
+      "property": "border-left",
+      "value": "1px solid blue"
+    },
+    {
+      "property": "border-left",
+      "value": "1px solid red"
+    },
+    {
+      "property": "border-left",
+      "value": "1px solid white"
+    },
+    {
+      "property": "border-left",
+      "value": "2px solid black"
+    },
+    {
+      "property": "border-left",
+      "value": "2px solid blue"
+    },
+    {
+      "property": "border-left",
+      "value": "2px solid red"
+    },
+    {
+      "property": "border-left",
+      "value": "2px solid white"
+    },
+    {
+      "property": "border-left",
+      "value": "3px solid black"
+    },
+    {
+      "property": "border-left",
+      "value": "3px solid blue"
+    },
+    {
+      "property": "border-left",
+      "value": "3px solid red"
+    },
+    {
+      "property": "border-left",
+      "value": "3px solid white"
+    },
+    {
+      "property": "border-left",
+      "value": "4px solid black"
+    },
+    {
+      "property": "border-left",
+      "value": "4px solid blue"
+    },
+    {
+      "property": "border-left",
+      "value": "4px solid red"
+    },
+    {
+      "property": "border-left",
+      "value": "4px solid white"
+    },
+    {
+      "property": "border-right",
+      "value": "0px solid black"
+    },
+    {
+      "property": "border-right",
+      "value": "0px solid blue"
+    },
+    {
+      "property": "border-right",
+      "value": "0px solid red"
+    },
+    {
+      "property": "border-right",
+      "value": "0px solid white"
+    },
+    {
+      "property": "border-right",
+      "value": "1px solid black"
+    },
+    {
+      "property": "border-right",
+      "value": "1px solid blue"
+    },
+    {
+      "property": "border-right",
+      "value": "1px solid red"
+    },
+    {
+      "property": "border-right",
+      "value": "1px solid white"
+    },
+    {
+      "property": "border-right",
+      "value": "2px solid black"
+    },
+    {
+      "property": "border-right",
+      "value": "2px solid blue"
+    },
+    {
+      "property": "border-right",
+      "value": "2px solid red"
+    },
+    {
+      "property": "border-right",
+      "value": "2px solid white"
+    },
+    {
+      "property": "border-right",
+      "value": "3px solid black"
+    },
+    {
+      "property": "border-right",
+      "value": "3px solid blue"
+    },
+    {
+      "property": "border-right",
+      "value": "3px solid red"
+    },
+    {
+      "property": "border-right",
+      "value": "3px solid white"
+    },
+    {
+      "property": "border-right",
+      "value": "4px solid black"
+    },
+    {
+      "property": "border-right",
+      "value": "4px solid blue"
+    },
+    {
+      "property": "border-right",
+      "value": "4px solid red"
+    },
+    {
+      "property": "border-right",
+      "value": "4px solid white"
+    },
+    {
+      "property": "border-top",
+      "value": "0px solid black"
+    },
+    {
+      "property": "border-top",
+      "value": "0px solid blue"
+    },
+    {
+      "property": "border-top",
+      "value": "0px solid red"
+    },
+    {
+      "property": "border-top",
+      "value": "0px solid white"
+    },
+    {
+      "property": "border-top",
+      "value": "1px solid black"
+    },
+    {
+      "property": "border-top",
+      "value": "1px solid blue"
+    },
+    {
+      "property": "border-top",
+      "value": "1px solid red"
+    },
+    {
+      "property": "border-top",
+      "value": "1px solid white"
+    },
+    {
+      "property": "border-top",
+      "value": "2px solid black"
+    },
+    {
+      "property": "border-top",
+      "value": "2px solid blue"
+    },
+    {
+      "property": "border-top",
+      "value": "2px solid red"
+    },
+    {
+      "property": "border-top",
+      "value": "2px solid white"
+    },
+    {
+      "property": "border-top",
+      "value": "3px solid black"
+    },
+    {
+      "property": "border-top",
+      "value": "3px solid blue"
+    },
+    {
+      "property": "border-top",
+      "value": "3px solid red"
+    },
+    {
+      "property": "border-top",
+      "value": "3px solid white"
+    },
+    {
+      "property": "border-top",
+      "value": "4px solid black"
+    },
+    {
+      "property": "border-top",
+      "value": "4px solid blue"
+    },
+    {
+      "property": "border-top",
+      "value": "4px solid red"
+    },
+    {
+      "property": "border-top",
+      "value": "4px solid white"
+    },
+    {
+      "property": "color",
+      "value": "black"
+    },
+    {
+      "property": "color",
+      "value": "blue"
+    },
+    {
+      "property": "color",
+      "value": "red"
+    },
+    {
+      "property": "color",
+      "value": "white"
+    },
+    {
+      "property": "display",
+      "value": "block"
+    },
+    {
+      "property": "display",
+      "value": "flex"
+    },
+    {
+      "property": "display",
+      "value": "inline"
+    },
+    {
+      "property": "display",
+      "value": "inline-block"
+    },
+    {
+      "property": "display",
+      "value": "inline-flex"
+    },
+    {
+      "property": "display",
+      "value": "none"
+    },
+    {
+      "property": "down",
+      "value": "0px"
+    },
+    {
+      "property": "down",
+      "value": "100%"
+    },
+    {
+      "property": "down",
+      "value": "100vh"
+    },
+    {
+      "property": "down",
+      "value": "100vw"
+    },
+    {
+      "property": "down",
+      "value": "1024px"
+    },
+    {
+      "property": "down",
+      "value": "11111111px"
+    },
+    {
+      "property": "down",
+      "value": "128px"
+    },
+    {
+      "property": "down",
+      "value": "12px"
+    },
+    {
+      "property": "down",
+      "value": "1536px"
+    },
+    {
+      "property": "down",
+      "value": "16px"
+    },
+    {
+      "property": "down",
+      "value": "192px"
+    },
+    {
+      "property": "down",
+      "value": "1px"
+    },
+    {
+      "property": "down",
+      "value": "24px"
+    },
+    {
+      "property": "down",
+      "value": "256px"
+    },
+    {
+      "property": "down",
+      "value": "2px"
+    },
+    {
+      "property": "down",
+      "value": "32px"
+    },
+    {
+      "property": "down",
+      "value": "384px"
+    },
+    {
+      "property": "down",
+      "value": "3px"
+    },
+    {
+      "property": "down",
+      "value": "48px"
+    },
+    {
+      "property": "down",
+      "value": "4px"
+    },
+    {
+      "property": "down",
+      "value": "50%"
+    },
+    {
+      "property": "down",
+      "value": "512px"
+    },
+    {
+      "property": "down",
+      "value": "64px"
+    },
+    {
+      "property": "down",
+      "value": "6px"
+    },
+    {
+      "property": "down",
+      "value": "768px"
+    },
+    {
+      "property": "down",
+      "value": "8px"
+    },
+    {
+      "property": "down",
+      "value": "96px"
+    },
+    {
+      "property": "flex",
+      "value": "0 0 0"
+    },
+    {
+      "property": "flex",
+      "value": "0 0 auto"
+    },
+    {
+      "property": "flex",
+      "value": "0 1 0"
+    },
+    {
+      "property": "flex",
+      "value": "0 1 auto"
+    },
+    {
+      "property": "flex",
+      "value": "0 auto 0"
+    },
+    {
+      "property": "flex",
+      "value": "0 auto auto"
+    },
+    {
+      "property": "flex",
+      "value": "1 0 0"
+    },
+    {
+      "property": "flex",
+      "value": "1 0 auto"
+    },
+    {
+      "property": "flex",
+      "value": "1 1 0"
+    },
+    {
+      "property": "flex",
+      "value": "1 1 auto"
+    },
+    {
+      "property": "flex",
+      "value": "1 auto 0"
+    },
+    {
+      "property": "flex",
+      "value": "1 auto auto"
+    },
+    {
+      "property": "flex",
+      "value": "auto 0 0"
+    },
+    {
+      "property": "flex",
+      "value": "auto 0 auto"
+    },
+    {
+      "property": "flex",
+      "value": "auto 1 0"
+    },
+    {
+      "property": "flex",
+      "value": "auto 1 auto"
+    },
+    {
+      "property": "flex",
+      "value": "auto auto 0"
+    },
+    {
+      "property": "flex",
+      "value": "auto auto auto"
+    },
+    {
+      "property": "font-size",
+      "value": "12px",
+      "extra": [["line-height", "1.3"]]
+    },
+    {
+      "property": "font-size",
+      "value": "16px",
+      "extra": [["line-height", "1.3"]]
+    },
+    {
+      "property": "font-size",
+      "value": "24px",
+      "extra": [["line-height", "1.3"]]
+    },
+    {
+      "property": "font-size",
+      "value": "32px",
+      "extra": [["line-height", "1.2"]]
+    },
+    {
+      "property": "font-size",
+      "value": "48px",
+      "extra": [["line-height", "1.2"]]
+    },
+    {
+      "property": "font-size",
+      "value": "64px",
+      "extra": [["line-height", "1.2"]]
+    },
+    {
+      "property": "font-style",
+      "value": "italic"
+    },
+    {
+      "property": "font-style",
+      "value": "normal"
+    },
+    {
+      "property": "font-weight",
+      "value": "400"
+    },
+    {
+      "property": "font-weight",
+      "value": "600"
+    },
+    {
+      "property": "font-weight",
+      "value": "700"
+    },
+    {
+      "property": "height",
+      "value": "0px"
+    },
+    {
+      "property": "height",
+      "value": "100%"
+    },
+    {
+      "property": "height",
+      "value": "100vh"
+    },
+    {
+      "property": "height",
+      "value": "100vw"
+    },
+    {
+      "property": "height",
+      "value": "1024px"
+    },
+    {
+      "property": "height",
+      "value": "11111111px"
+    },
+    {
+      "property": "height",
+      "value": "128px"
+    },
+    {
+      "property": "height",
+      "value": "12px"
+    },
+    {
+      "property": "height",
+      "value": "1536px"
+    },
+    {
+      "property": "height",
+      "value": "16px"
+    },
+    {
+      "property": "height",
+      "value": "192px"
+    },
+    {
+      "property": "height",
+      "value": "1px"
+    },
+    {
+      "property": "height",
+      "value": "24px"
+    },
+    {
+      "property": "height",
+      "value": "256px"
+    },
+    {
+      "property": "height",
+      "value": "2px"
+    },
+    {
+      "property": "height",
+      "value": "32px"
+    },
+    {
+      "property": "height",
+      "value": "384px"
+    },
+    {
+      "property": "height",
+      "value": "3px"
+    },
+    {
+      "property": "height",
+      "value": "48px"
+    },
+    {
+      "property": "height",
+      "value": "4px"
+    },
+    {
+      "property": "height",
+      "value": "50%"
+    },
+    {
+      "property": "height",
+      "value": "512px"
+    },
+    {
+      "property": "height",
+      "value": "64px"
+    },
+    {
+      "property": "height",
+      "value": "6px"
+    },
+    {
+      "property": "height",
+      "value": "768px"
+    },
+    {
+      "property": "height",
+      "value": "8px"
+    },
+    {
+      "property": "height",
+      "value": "96px"
+    },
+    {
+      "property": "left",
+      "value": "0px"
+    },
+    {
+      "property": "left",
+      "value": "100%"
+    },
+    {
+      "property": "left",
+      "value": "100vh"
+    },
+    {
+      "property": "left",
+      "value": "100vw"
+    },
+    {
+      "property": "left",
+      "value": "1024px"
+    },
+    {
+      "property": "left",
+      "value": "11111111px"
+    },
+    {
+      "property": "left",
+      "value": "128px"
+    },
+    {
+      "property": "left",
+      "value": "12px"
+    },
+    {
+      "property": "left",
+      "value": "1536px"
+    },
+    {
+      "property": "left",
+      "value": "16px"
+    },
+    {
+      "property": "left",
+      "value": "192px"
+    },
+    {
+      "property": "left",
+      "value": "1px"
+    },
+    {
+      "property": "left",
+      "value": "24px"
+    },
+    {
+      "property": "left",
+      "value": "256px"
+    },
+    {
+      "property": "left",
+      "value": "2px"
+    },
+    {
+      "property": "left",
+      "value": "32px"
+    },
+    {
+      "property": "left",
+      "value": "384px"
+    },
+    {
+      "property": "left",
+      "value": "3px"
+    },
+    {
+      "property": "left",
+      "value": "48px"
+    },
+    {
+      "property": "left",
+      "value": "4px"
+    },
+    {
+      "property": "left",
+      "value": "50%"
+    },
+    {
+      "property": "left",
+      "value": "512px"
+    },
+    {
+      "property": "left",
+      "value": "64px"
+    },
+    {
+      "property": "left",
+      "value": "6px"
+    },
+    {
+      "property": "left",
+      "value": "768px"
+    },
+    {
+      "property": "left",
+      "value": "8px"
+    },
+    {
+      "property": "left",
+      "value": "96px"
+    },
+    {
+      "property": "line-height",
+      "value": "1"
+    },
+    {
+      "property": "line-height",
+      "value": "1.2"
+    },
+    {
+      "property": "line-height",
+      "value": "1.3"
+    },
+    {
+      "property": "margin",
+      "value": "-100%"
+    },
+    {
+      "property": "margin",
+      "value": "-100vh"
+    },
+    {
+      "property": "margin",
+      "value": "-100vw"
+    },
+    {
+      "property": "margin",
+      "value": "-1024px"
+    },
+    {
+      "property": "margin",
+      "value": "-11111111px"
+    },
+    {
+      "property": "margin",
+      "value": "-128px"
+    },
+    {
+      "property": "margin",
+      "value": "-12px"
+    },
+    {
+      "property": "margin",
+      "value": "-1536px"
+    },
+    {
+      "property": "margin",
+      "value": "-16px"
+    },
+    {
+      "property": "margin",
+      "value": "-192px"
+    },
+    {
+      "property": "margin",
+      "value": "-1px"
+    },
+    {
+      "property": "margin",
+      "value": "-24px"
+    },
+    {
+      "property": "margin",
+      "value": "-256px"
+    },
+    {
+      "property": "margin",
+      "value": "-2px"
+    },
+    {
+      "property": "margin",
+      "value": "-32px"
+    },
+    {
+      "property": "margin",
+      "value": "-384px"
+    },
+    {
+      "property": "margin",
+      "value": "-3px"
+    },
+    {
+      "property": "margin",
+      "value": "-48px"
+    },
+    {
+      "property": "margin",
+      "value": "-4px"
+    },
+    {
+      "property": "margin",
+      "value": "-50%"
+    },
+    {
+      "property": "margin",
+      "value": "-512px"
+    },
+    {
+      "property": "margin",
+      "value": "-64px"
+    },
+    {
+      "property": "margin",
+      "value": "-6px"
+    },
+    {
+      "property": "margin",
+      "value": "-768px"
+    },
+    {
+      "property": "margin",
+      "value": "-8px"
+    },
+    {
+      "property": "margin",
+      "value": "-96px"
+    },
+    {
+      "property": "margin",
+      "value": "0px"
+    },
+    {
+      "property": "margin",
+      "value": "100%"
+    },
+    {
+      "property": "margin",
+      "value": "100vh"
+    },
+    {
+      "property": "margin",
+      "value": "100vw"
+    },
+    {
+      "property": "margin",
+      "value": "1024px"
+    },
+    {
+      "property": "margin",
+      "value": "11111111px"
+    },
+    {
+      "property": "margin",
+      "value": "128px"
+    },
+    {
+      "property": "margin",
+      "value": "12px"
+    },
+    {
+      "property": "margin",
+      "value": "1536px"
+    },
+    {
+      "property": "margin",
+      "value": "16px"
+    },
+    {
+      "property": "margin",
+      "value": "192px"
+    },
+    {
+      "property": "margin",
+      "value": "1px"
+    },
+    {
+      "property": "margin",
+      "value": "24px"
+    },
+    {
+      "property": "margin",
+      "value": "256px"
+    },
+    {
+      "property": "margin",
+      "value": "2px"
+    },
+    {
+      "property": "margin",
+      "value": "32px"
+    },
+    {
+      "property": "margin",
+      "value": "384px"
+    },
+    {
+      "property": "margin",
+      "value": "3px"
+    },
+    {
+      "property": "margin",
+      "value": "48px"
+    },
+    {
+      "property": "margin",
+      "value": "4px"
+    },
+    {
+      "property": "margin",
+      "value": "50%"
+    },
+    {
+      "property": "margin",
+      "value": "512px"
+    },
+    {
+      "property": "margin",
+      "value": "64px"
+    },
+    {
+      "property": "margin",
+      "value": "6px"
+    },
+    {
+      "property": "margin",
+      "value": "768px"
+    },
+    {
+      "property": "margin",
+      "value": "8px"
+    },
+    {
+      "property": "margin",
+      "value": "96px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-100%"
+    },
+    {
+      "property": "margin-down",
+      "value": "-100vh"
+    },
+    {
+      "property": "margin-down",
+      "value": "-100vw"
+    },
+    {
+      "property": "margin-down",
+      "value": "-1024px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-11111111px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-128px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-12px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-1536px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-16px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-192px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-1px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-24px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-256px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-2px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-32px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-384px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-3px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-48px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-4px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-50%"
+    },
+    {
+      "property": "margin-down",
+      "value": "-512px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-64px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-6px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-768px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-8px"
+    },
+    {
+      "property": "margin-down",
+      "value": "-96px"
+    },
+    {
+      "property": "margin-down",
+      "value": "0px"
+    },
+    {
+      "property": "margin-down",
+      "value": "100%"
+    },
+    {
+      "property": "margin-down",
+      "value": "100vh"
+    },
+    {
+      "property": "margin-down",
+      "value": "100vw"
+    },
+    {
+      "property": "margin-down",
+      "value": "1024px"
+    },
+    {
+      "property": "margin-down",
+      "value": "11111111px"
+    },
+    {
+      "property": "margin-down",
+      "value": "128px"
+    },
+    {
+      "property": "margin-down",
+      "value": "12px"
+    },
+    {
+      "property": "margin-down",
+      "value": "1536px"
+    },
+    {
+      "property": "margin-down",
+      "value": "16px"
+    },
+    {
+      "property": "margin-down",
+      "value": "192px"
+    },
+    {
+      "property": "margin-down",
+      "value": "1px"
+    },
+    {
+      "property": "margin-down",
+      "value": "24px"
+    },
+    {
+      "property": "margin-down",
+      "value": "256px"
+    },
+    {
+      "property": "margin-down",
+      "value": "2px"
+    },
+    {
+      "property": "margin-down",
+      "value": "32px"
+    },
+    {
+      "property": "margin-down",
+      "value": "384px"
+    },
+    {
+      "property": "margin-down",
+      "value": "3px"
+    },
+    {
+      "property": "margin-down",
+      "value": "48px"
+    },
+    {
+      "property": "margin-down",
+      "value": "4px"
+    },
+    {
+      "property": "margin-down",
+      "value": "50%"
+    },
+    {
+      "property": "margin-down",
+      "value": "512px"
+    },
+    {
+      "property": "margin-down",
+      "value": "64px"
+    },
+    {
+      "property": "margin-down",
+      "value": "6px"
+    },
+    {
+      "property": "margin-down",
+      "value": "768px"
+    },
+    {
+      "property": "margin-down",
+      "value": "8px"
+    },
+    {
+      "property": "margin-down",
+      "value": "96px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-100%"
+    },
+    {
+      "property": "margin-left",
+      "value": "-100vh"
+    },
+    {
+      "property": "margin-left",
+      "value": "-100vw"
+    },
+    {
+      "property": "margin-left",
+      "value": "-1024px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-11111111px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-128px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-12px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-1536px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-16px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-192px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-1px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-24px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-256px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-2px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-32px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-384px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-3px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-48px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-4px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-50%"
+    },
+    {
+      "property": "margin-left",
+      "value": "-512px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-64px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-6px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-768px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-8px"
+    },
+    {
+      "property": "margin-left",
+      "value": "-96px"
+    },
+    {
+      "property": "margin-left",
+      "value": "0px"
+    },
+    {
+      "property": "margin-left",
+      "value": "100%"
+    },
+    {
+      "property": "margin-left",
+      "value": "100vh"
+    },
+    {
+      "property": "margin-left",
+      "value": "100vw"
+    },
+    {
+      "property": "margin-left",
+      "value": "1024px"
+    },
+    {
+      "property": "margin-left",
+      "value": "11111111px"
+    },
+    {
+      "property": "margin-left",
+      "value": "128px"
+    },
+    {
+      "property": "margin-left",
+      "value": "12px"
+    },
+    {
+      "property": "margin-left",
+      "value": "1536px"
+    },
+    {
+      "property": "margin-left",
+      "value": "16px"
+    },
+    {
+      "property": "margin-left",
+      "value": "192px"
+    },
+    {
+      "property": "margin-left",
+      "value": "1px"
+    },
+    {
+      "property": "margin-left",
+      "value": "24px"
+    },
+    {
+      "property": "margin-left",
+      "value": "256px"
+    },
+    {
+      "property": "margin-left",
+      "value": "2px"
+    },
+    {
+      "property": "margin-left",
+      "value": "32px"
+    },
+    {
+      "property": "margin-left",
+      "value": "384px"
+    },
+    {
+      "property": "margin-left",
+      "value": "3px"
+    },
+    {
+      "property": "margin-left",
+      "value": "48px"
+    },
+    {
+      "property": "margin-left",
+      "value": "4px"
+    },
+    {
+      "property": "margin-left",
+      "value": "50%"
+    },
+    {
+      "property": "margin-left",
+      "value": "512px"
+    },
+    {
+      "property": "margin-left",
+      "value": "64px"
+    },
+    {
+      "property": "margin-left",
+      "value": "6px"
+    },
+    {
+      "property": "margin-left",
+      "value": "768px"
+    },
+    {
+      "property": "margin-left",
+      "value": "8px"
+    },
+    {
+      "property": "margin-left",
+      "value": "96px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-100%"
+    },
+    {
+      "property": "margin-right",
+      "value": "-100vh"
+    },
+    {
+      "property": "margin-right",
+      "value": "-100vw"
+    },
+    {
+      "property": "margin-right",
+      "value": "-1024px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-11111111px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-128px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-12px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-1536px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-16px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-192px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-1px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-24px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-256px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-2px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-32px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-384px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-3px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-48px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-4px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-50%"
+    },
+    {
+      "property": "margin-right",
+      "value": "-512px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-64px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-6px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-768px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-8px"
+    },
+    {
+      "property": "margin-right",
+      "value": "-96px"
+    },
+    {
+      "property": "margin-right",
+      "value": "0px"
+    },
+    {
+      "property": "margin-right",
+      "value": "100%"
+    },
+    {
+      "property": "margin-right",
+      "value": "100vh"
+    },
+    {
+      "property": "margin-right",
+      "value": "100vw"
+    },
+    {
+      "property": "margin-right",
+      "value": "1024px"
+    },
+    {
+      "property": "margin-right",
+      "value": "11111111px"
+    },
+    {
+      "property": "margin-right",
+      "value": "128px"
+    },
+    {
+      "property": "margin-right",
+      "value": "12px"
+    },
+    {
+      "property": "margin-right",
+      "value": "1536px"
+    },
+    {
+      "property": "margin-right",
+      "value": "16px"
+    },
+    {
+      "property": "margin-right",
+      "value": "192px"
+    },
+    {
+      "property": "margin-right",
+      "value": "1px"
+    },
+    {
+      "property": "margin-right",
+      "value": "24px"
+    },
+    {
+      "property": "margin-right",
+      "value": "256px"
+    },
+    {
+      "property": "margin-right",
+      "value": "2px"
+    },
+    {
+      "property": "margin-right",
+      "value": "32px"
+    },
+    {
+      "property": "margin-right",
+      "value": "384px"
+    },
+    {
+      "property": "margin-right",
+      "value": "3px"
+    },
+    {
+      "property": "margin-right",
+      "value": "48px"
+    },
+    {
+      "property": "margin-right",
+      "value": "4px"
+    },
+    {
+      "property": "margin-right",
+      "value": "50%"
+    },
+    {
+      "property": "margin-right",
+      "value": "512px"
+    },
+    {
+      "property": "margin-right",
+      "value": "64px"
+    },
+    {
+      "property": "margin-right",
+      "value": "6px"
+    },
+    {
+      "property": "margin-right",
+      "value": "768px"
+    },
+    {
+      "property": "margin-right",
+      "value": "8px"
+    },
+    {
+      "property": "margin-right",
+      "value": "96px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-100%"
+    },
+    {
+      "property": "margin-top",
+      "value": "-100vh"
+    },
+    {
+      "property": "margin-top",
+      "value": "-100vw"
+    },
+    {
+      "property": "margin-top",
+      "value": "-1024px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-11111111px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-128px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-12px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-1536px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-16px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-192px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-1px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-24px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-256px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-2px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-32px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-384px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-3px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-48px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-4px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-50%"
+    },
+    {
+      "property": "margin-top",
+      "value": "-512px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-64px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-6px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-768px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-8px"
+    },
+    {
+      "property": "margin-top",
+      "value": "-96px"
+    },
+    {
+      "property": "margin-top",
+      "value": "0px"
+    },
+    {
+      "property": "margin-top",
+      "value": "100%"
+    },
+    {
+      "property": "margin-top",
+      "value": "100vh"
+    },
+    {
+      "property": "margin-top",
+      "value": "100vw"
+    },
+    {
+      "property": "margin-top",
+      "value": "1024px"
+    },
+    {
+      "property": "margin-top",
+      "value": "11111111px"
+    },
+    {
+      "property": "margin-top",
+      "value": "128px"
+    },
+    {
+      "property": "margin-top",
+      "value": "12px"
+    },
+    {
+      "property": "margin-top",
+      "value": "1536px"
+    },
+    {
+      "property": "margin-top",
+      "value": "16px"
+    },
+    {
+      "property": "margin-top",
+      "value": "192px"
+    },
+    {
+      "property": "margin-top",
+      "value": "1px"
+    },
+    {
+      "property": "margin-top",
+      "value": "24px"
+    },
+    {
+      "property": "margin-top",
+      "value": "256px"
+    },
+    {
+      "property": "margin-top",
+      "value": "2px"
+    },
+    {
+      "property": "margin-top",
+      "value": "32px"
+    },
+    {
+      "property": "margin-top",
+      "value": "384px"
+    },
+    {
+      "property": "margin-top",
+      "value": "3px"
+    },
+    {
+      "property": "margin-top",
+      "value": "48px"
+    },
+    {
+      "property": "margin-top",
+      "value": "4px"
+    },
+    {
+      "property": "margin-top",
+      "value": "50%"
+    },
+    {
+      "property": "margin-top",
+      "value": "512px"
+    },
+    {
+      "property": "margin-top",
+      "value": "64px"
+    },
+    {
+      "property": "margin-top",
+      "value": "6px"
+    },
+    {
+      "property": "margin-top",
+      "value": "768px"
+    },
+    {
+      "property": "margin-top",
+      "value": "8px"
+    },
+    {
+      "property": "margin-top",
+      "value": "96px"
+    },
+    {
+      "property": "overflow",
+      "value": "auto auto"
+    },
+    {
+      "property": "overflow",
+      "value": "auto hidden"
+    },
+    {
+      "property": "overflow",
+      "value": "auto scroll"
+    },
+    {
+      "property": "overflow",
+      "value": "auto visible"
+    },
+    {
+      "property": "overflow",
+      "value": "hidden auto"
+    },
+    {
+      "property": "overflow",
+      "value": "hidden hidden"
+    },
+    {
+      "property": "overflow",
+      "value": "hidden scroll"
+    },
+    {
+      "property": "overflow",
+      "value": "hidden visible"
+    },
+    {
+      "property": "overflow",
+      "value": "scroll auto"
+    },
+    {
+      "property": "overflow",
+      "value": "scroll hidden"
+    },
+    {
+      "property": "overflow",
+      "value": "scroll scroll"
+    },
+    {
+      "property": "overflow",
+      "value": "scroll visible"
+    },
+    {
+      "property": "overflow",
+      "value": "visible auto"
+    },
+    {
+      "property": "overflow",
+      "value": "visible hidden"
+    },
+    {
+      "property": "overflow",
+      "value": "visible scroll"
+    },
+    {
+      "property": "overflow",
+      "value": "visible visible"
+    },
+    {
+      "property": "padding",
+      "value": "0px"
+    },
+    {
+      "property": "padding",
+      "value": "100%"
+    },
+    {
+      "property": "padding",
+      "value": "100vh"
+    },
+    {
+      "property": "padding",
+      "value": "100vw"
+    },
+    {
+      "property": "padding",
+      "value": "1024px"
+    },
+    {
+      "property": "padding",
+      "value": "11111111px"
+    },
+    {
+      "property": "padding",
+      "value": "128px"
+    },
+    {
+      "property": "padding",
+      "value": "12px"
+    },
+    {
+      "property": "padding",
+      "value": "1536px"
+    },
+    {
+      "property": "padding",
+      "value": "16px"
+    },
+    {
+      "property": "padding",
+      "value": "192px"
+    },
+    {
+      "property": "padding",
+      "value": "1px"
+    },
+    {
+      "property": "padding",
+      "value": "24px"
+    },
+    {
+      "property": "padding",
+      "value": "256px"
+    },
+    {
+      "property": "padding",
+      "value": "2px"
+    },
+    {
+      "property": "padding",
+      "value": "32px"
+    },
+    {
+      "property": "padding",
+      "value": "384px"
+    },
+    {
+      "property": "padding",
+      "value": "3px"
+    },
+    {
+      "property": "padding",
+      "value": "48px"
+    },
+    {
+      "property": "padding",
+      "value": "4px"
+    },
+    {
+      "property": "padding",
+      "value": "50%"
+    },
+    {
+      "property": "padding",
+      "value": "512px"
+    },
+    {
+      "property": "padding",
+      "value": "64px"
+    },
+    {
+      "property": "padding",
+      "value": "6px"
+    },
+    {
+      "property": "padding",
+      "value": "768px"
+    },
+    {
+      "property": "padding",
+      "value": "8px"
+    },
+    {
+      "property": "padding",
+      "value": "96px"
+    },
+    {
+      "property": "padding-down",
+      "value": "0px"
+    },
+    {
+      "property": "padding-down",
+      "value": "100%"
+    },
+    {
+      "property": "padding-down",
+      "value": "100vh"
+    },
+    {
+      "property": "padding-down",
+      "value": "100vw"
+    },
+    {
+      "property": "padding-down",
+      "value": "1024px"
+    },
+    {
+      "property": "padding-down",
+      "value": "11111111px"
+    },
+    {
+      "property": "padding-down",
+      "value": "128px"
+    },
+    {
+      "property": "padding-down",
+      "value": "12px"
+    },
+    {
+      "property": "padding-down",
+      "value": "1536px"
+    },
+    {
+      "property": "padding-down",
+      "value": "16px"
+    },
+    {
+      "property": "padding-down",
+      "value": "192px"
+    },
+    {
+      "property": "padding-down",
+      "value": "1px"
+    },
+    {
+      "property": "padding-down",
+      "value": "24px"
+    },
+    {
+      "property": "padding-down",
+      "value": "256px"
+    },
+    {
+      "property": "padding-down",
+      "value": "2px"
+    },
+    {
+      "property": "padding-down",
+      "value": "32px"
+    },
+    {
+      "property": "padding-down",
+      "value": "384px"
+    },
+    {
+      "property": "padding-down",
+      "value": "3px"
+    },
+    {
+      "property": "padding-down",
+      "value": "48px"
+    },
+    {
+      "property": "padding-down",
+      "value": "4px"
+    },
+    {
+      "property": "padding-down",
+      "value": "50%"
+    },
+    {
+      "property": "padding-down",
+      "value": "512px"
+    },
+    {
+      "property": "padding-down",
+      "value": "64px"
+    },
+    {
+      "property": "padding-down",
+      "value": "6px"
+    },
+    {
+      "property": "padding-down",
+      "value": "768px"
+    },
+    {
+      "property": "padding-down",
+      "value": "8px"
+    },
+    {
+      "property": "padding-down",
+      "value": "96px"
+    },
+    {
+      "property": "padding-left",
+      "value": "0px"
+    },
+    {
+      "property": "padding-left",
+      "value": "100%"
+    },
+    {
+      "property": "padding-left",
+      "value": "100vh"
+    },
+    {
+      "property": "padding-left",
+      "value": "100vw"
+    },
+    {
+      "property": "padding-left",
+      "value": "1024px"
+    },
+    {
+      "property": "padding-left",
+      "value": "11111111px"
+    },
+    {
+      "property": "padding-left",
+      "value": "128px"
+    },
+    {
+      "property": "padding-left",
+      "value": "12px"
+    },
+    {
+      "property": "padding-left",
+      "value": "1536px"
+    },
+    {
+      "property": "padding-left",
+      "value": "16px"
+    },
+    {
+      "property": "padding-left",
+      "value": "192px"
+    },
+    {
+      "property": "padding-left",
+      "value": "1px"
+    },
+    {
+      "property": "padding-left",
+      "value": "24px"
+    },
+    {
+      "property": "padding-left",
+      "value": "256px"
+    },
+    {
+      "property": "padding-left",
+      "value": "2px"
+    },
+    {
+      "property": "padding-left",
+      "value": "32px"
+    },
+    {
+      "property": "padding-left",
+      "value": "384px"
+    },
+    {
+      "property": "padding-left",
+      "value": "3px"
+    },
+    {
+      "property": "padding-left",
+      "value": "48px"
+    },
+    {
+      "property": "padding-left",
+      "value": "4px"
+    },
+    {
+      "property": "padding-left",
+      "value": "50%"
+    },
+    {
+      "property": "padding-left",
+      "value": "512px"
+    },
+    {
+      "property": "padding-left",
+      "value": "64px"
+    },
+    {
+      "property": "padding-left",
+      "value": "6px"
+    },
+    {
+      "property": "padding-left",
+      "value": "768px"
+    },
+    {
+      "property": "padding-left",
+      "value": "8px"
+    },
+    {
+      "property": "padding-left",
+      "value": "96px"
+    },
+    {
+      "property": "padding-right",
+      "value": "0px"
+    },
+    {
+      "property": "padding-right",
+      "value": "100%"
+    },
+    {
+      "property": "padding-right",
+      "value": "100vh"
+    },
+    {
+      "property": "padding-right",
+      "value": "100vw"
+    },
+    {
+      "property": "padding-right",
+      "value": "1024px"
+    },
+    {
+      "property": "padding-right",
+      "value": "11111111px"
+    },
+    {
+      "property": "padding-right",
+      "value": "128px"
+    },
+    {
+      "property": "padding-right",
+      "value": "12px"
+    },
+    {
+      "property": "padding-right",
+      "value": "1536px"
+    },
+    {
+      "property": "padding-right",
+      "value": "16px"
+    },
+    {
+      "property": "padding-right",
+      "value": "192px"
+    },
+    {
+      "property": "padding-right",
+      "value": "1px"
+    },
+    {
+      "property": "padding-right",
+      "value": "24px"
+    },
+    {
+      "property": "padding-right",
+      "value": "256px"
+    },
+    {
+      "property": "padding-right",
+      "value": "2px"
+    },
+    {
+      "property": "padding-right",
+      "value": "32px"
+    },
+    {
+      "property": "padding-right",
+      "value": "384px"
+    },
+    {
+      "property": "padding-right",
+      "value": "3px"
+    },
+    {
+      "property": "padding-right",
+      "value": "48px"
+    },
+    {
+      "property": "padding-right",
+      "value": "4px"
+    },
+    {
+      "property": "padding-right",
+      "value": "50%"
+    },
+    {
+      "property": "padding-right",
+      "value": "512px"
+    },
+    {
+      "property": "padding-right",
+      "value": "64px"
+    },
+    {
+      "property": "padding-right",
+      "value": "6px"
+    },
+    {
+      "property": "padding-right",
+      "value": "768px"
+    },
+    {
+      "property": "padding-right",
+      "value": "8px"
+    },
+    {
+      "property": "padding-right",
+      "value": "96px"
+    },
+    {
+      "property": "padding-top",
+      "value": "0px"
+    },
+    {
+      "property": "padding-top",
+      "value": "100%"
+    },
+    {
+      "property": "padding-top",
+      "value": "100vh"
+    },
+    {
+      "property": "padding-top",
+      "value": "100vw"
+    },
+    {
+      "property": "padding-top",
+      "value": "1024px"
+    },
+    {
+      "property": "padding-top",
+      "value": "11111111px"
+    },
+    {
+      "property": "padding-top",
+      "value": "128px"
+    },
+    {
+      "property": "padding-top",
+      "value": "12px"
+    },
+    {
+      "property": "padding-top",
+      "value": "1536px"
+    },
+    {
+      "property": "padding-top",
+      "value": "16px"
+    },
+    {
+      "property": "padding-top",
+      "value": "192px"
+    },
+    {
+      "property": "padding-top",
+      "value": "1px"
+    },
+    {
+      "property": "padding-top",
+      "value": "24px"
+    },
+    {
+      "property": "padding-top",
+      "value": "256px"
+    },
+    {
+      "property": "padding-top",
+      "value": "2px"
+    },
+    {
+      "property": "padding-top",
+      "value": "32px"
+    },
+    {
+      "property": "padding-top",
+      "value": "384px"
+    },
+    {
+      "property": "padding-top",
+      "value": "3px"
+    },
+    {
+      "property": "padding-top",
+      "value": "48px"
+    },
+    {
+      "property": "padding-top",
+      "value": "4px"
+    },
+    {
+      "property": "padding-top",
+      "value": "50%"
+    },
+    {
+      "property": "padding-top",
+      "value": "512px"
+    },
+    {
+      "property": "padding-top",
+      "value": "64px"
+    },
+    {
+      "property": "padding-top",
+      "value": "6px"
+    },
+    {
+      "property": "padding-top",
+      "value": "768px"
+    },
+    {
+      "property": "padding-top",
+      "value": "8px"
+    },
+    {
+      "property": "padding-top",
+      "value": "96px"
+    },
+    {
+      "property": "right",
+      "value": "0px"
+    },
+    {
+      "property": "right",
+      "value": "100%"
+    },
+    {
+      "property": "right",
+      "value": "100vh"
+    },
+    {
+      "property": "right",
+      "value": "100vw"
+    },
+    {
+      "property": "right",
+      "value": "1024px"
+    },
+    {
+      "property": "right",
+      "value": "11111111px"
+    },
+    {
+      "property": "right",
+      "value": "128px"
+    },
+    {
+      "property": "right",
+      "value": "12px"
+    },
+    {
+      "property": "right",
+      "value": "1536px"
+    },
+    {
+      "property": "right",
+      "value": "16px"
+    },
+    {
+      "property": "right",
+      "value": "192px"
+    },
+    {
+      "property": "right",
+      "value": "1px"
+    },
+    {
+      "property": "right",
+      "value": "24px"
+    },
+    {
+      "property": "right",
+      "value": "256px"
+    },
+    {
+      "property": "right",
+      "value": "2px"
+    },
+    {
+      "property": "right",
+      "value": "32px"
+    },
+    {
+      "property": "right",
+      "value": "384px"
+    },
+    {
+      "property": "right",
+      "value": "3px"
+    },
+    {
+      "property": "right",
+      "value": "48px"
+    },
+    {
+      "property": "right",
+      "value": "4px"
+    },
+    {
+      "property": "right",
+      "value": "50%"
+    },
+    {
+      "property": "right",
+      "value": "512px"
+    },
+    {
+      "property": "right",
+      "value": "64px"
+    },
+    {
+      "property": "right",
+      "value": "6px"
+    },
+    {
+      "property": "right",
+      "value": "768px"
+    },
+    {
+      "property": "right",
+      "value": "8px"
+    },
+    {
+      "property": "right",
+      "value": "96px"
+    },
+    {
+      "property": "text-decoration",
+      "value": "line-through"
+    },
+    {
+      "property": "text-decoration",
+      "value": "none"
+    },
+    {
+      "property": "text-decoration",
+      "value": "underline"
+    },
+    {
+      "property": "top",
+      "value": "0px"
+    },
+    {
+      "property": "top",
+      "value": "100%"
+    },
+    {
+      "property": "top",
+      "value": "100vh"
+    },
+    {
+      "property": "top",
+      "value": "100vw"
+    },
+    {
+      "property": "top",
+      "value": "1024px"
+    },
+    {
+      "property": "top",
+      "value": "11111111px"
+    },
+    {
+      "property": "top",
+      "value": "128px"
+    },
+    {
+      "property": "top",
+      "value": "12px"
+    },
+    {
+      "property": "top",
+      "value": "1536px"
+    },
+    {
+      "property": "top",
+      "value": "16px"
+    },
+    {
+      "property": "top",
+      "value": "192px"
+    },
+    {
+      "property": "top",
+      "value": "1px"
+    },
+    {
+      "property": "top",
+      "value": "24px"
+    },
+    {
+      "property": "top",
+      "value": "256px"
+    },
+    {
+      "property": "top",
+      "value": "2px"
+    },
+    {
+      "property": "top",
+      "value": "32px"
+    },
+    {
+      "property": "top",
+      "value": "384px"
+    },
+    {
+      "property": "top",
+      "value": "3px"
+    },
+    {
+      "property": "top",
+      "value": "48px"
+    },
+    {
+      "property": "top",
+      "value": "4px"
+    },
+    {
+      "property": "top",
+      "value": "50%"
+    },
+    {
+      "property": "top",
+      "value": "512px"
+    },
+    {
+      "property": "top",
+      "value": "64px"
+    },
+    {
+      "property": "top",
+      "value": "6px"
+    },
+    {
+      "property": "top",
+      "value": "768px"
+    },
+    {
+      "property": "top",
+      "value": "8px"
+    },
+    {
+      "property": "top",
+      "value": "96px"
+    },
+    {
+      "property": "width",
+      "value": "0px"
+    },
+    {
+      "property": "width",
+      "value": "100%"
+    },
+    {
+      "property": "width",
+      "value": "100vh"
+    },
+    {
+      "property": "width",
+      "value": "100vw"
+    },
+    {
+      "property": "width",
+      "value": "1024px"
+    },
+    {
+      "property": "width",
+      "value": "11111111px"
+    },
+    {
+      "property": "width",
+      "value": "128px"
+    },
+    {
+      "property": "width",
+      "value": "12px"
+    },
+    {
+      "property": "width",
+      "value": "1536px"
+    },
+    {
+      "property": "width",
+      "value": "16px"
+    },
+    {
+      "property": "width",
+      "value": "192px"
+    },
+    {
+      "property": "width",
+      "value": "1px"
+    },
+    {
+      "property": "width",
+      "value": "24px"
+    },
+    {
+      "property": "width",
+      "value": "256px"
+    },
+    {
+      "property": "width",
+      "value": "2px"
+    },
+    {
+      "property": "width",
+      "value": "32px"
+    },
+    {
+      "property": "width",
+      "value": "384px"
+    },
+    {
+      "property": "width",
+      "value": "3px"
+    },
+    {
+      "property": "width",
+      "value": "48px"
+    },
+    {
+      "property": "width",
+      "value": "4px"
+    },
+    {
+      "property": "width",
+      "value": "50%"
+    },
+    {
+      "property": "width",
+      "value": "512px"
+    },
+    {
+      "property": "width",
+      "value": "64px"
+    },
+    {
+      "property": "width",
+      "value": "6px"
+    },
+    {
+      "property": "width",
+      "value": "768px"
+    },
+    {
+      "property": "width",
+      "value": "8px"
+    },
+    {
+      "property": "width",
+      "value": "96px"
+    }
+  ]
+}

@@ -1,3 +1,5 @@
+import { StatementType, Settings, Evaluation, FunctionalRule } from '../types'
+
 const numberRegex = /^[+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?$/
 const rangeRegex = /^\[([+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?)( ([+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?))*\.\.([+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?)\]$/
 const bracketWithUnitRegex = /\]([a-zA-Z]+|%|)$/
@@ -370,8 +372,6 @@ export const stripComments = (fcss: string): string => {
   return curr
 }
 
-type StatementType = 'setting' | 'assignment' | 'at-rule' | 'declaration'
-
 const assignmentRegex = /^([^\[\]\{\}\(\) \t]+)[ \t]*=(%|[a-zA-Z]+|)[ \t]+(.*)$/
 const settingRegex = /^%([^: \t]+)[ \t]*:[ \t]+(.*)$/
 const atRuleRegex = /^@([a-z\-]+)[ \t]*(.*)$/
@@ -404,28 +404,12 @@ export const parseStatements = (fcss: string): [StatementType, string][] => {
   return results
 }
 
-type Settings = {
-  breakpoints: string[]
-  pseudo: string[]
-}
-
 const defaultSettings = {
   breakpoints: [],
   pseudo: ['all']
 }
 
 const validSettings = new Set(Object.keys(defaultSettings))
-
-type Evaluation = {
-  settings: Settings
-  functionalRules: FunctionalRule[]
-}
-
-type FunctionalRule = {
-  property: string
-  value: string
-  extra?: [string, string][]
-}
 
 export const evaluate = (fcss: string): Evaluation => {
   const settings: Settings = defaultSettings
@@ -532,6 +516,7 @@ export const evaluate = (fcss: string): Evaluation => {
 
   return {
     settings,
-    functionalRules
+    functionalRules,
+    prelude: ''
   }
 }
