@@ -16,3 +16,24 @@ export type FunctionalRule = {
   value: string
   extra?: [string, string][]
 }
+
+export type Expression =
+  | {
+      type: '*'
+      yOffset: number
+      step: number
+      end: number
+    }
+  | {
+      type: '^'
+      coeffn: number
+      power: number
+      end: number
+    }
+  | {
+      type: '2'
+      yOffset: number
+      coeff2: number
+      coeff1: number
+      end: number
+    }

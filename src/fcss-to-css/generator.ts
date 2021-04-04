@@ -1,4 +1,4 @@
-import { Evaluation } from '../parsers/fcss/types'
+import { Evaluation } from '../types'
 
 export const generate = (evaluation: Evaluation): string => {
   console.log(evaluation)

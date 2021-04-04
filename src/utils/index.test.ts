@@ -17,7 +17,7 @@ test('getAllValidDeclarations', () => {
   )
 })
 
-test.only('normalizeCSS', async () => {
+test('normalizeCSS', async () => {
   expect(
     getAllValidDeclarations(await normalizeCSS(fixture('bootstrap.css')))
   ).toEqual(JSON.parse(fixture('bootstrap.norm.json')))

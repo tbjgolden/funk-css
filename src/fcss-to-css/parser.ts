@@ -1,30 +1,15 @@
-import { StatementType, Settings, Evaluation, FunctionalRule } from './types'
+import {
+  StatementType,
+  Settings,
+  Evaluation,
+  FunctionalRule,
+  Expression
+} from '../types'
 
 const numberRegex = /^[+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?$/
 const rangeRegex = /^\[([+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?)( ([+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?))*\.\.([+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?)\]$/
 const bracketWithUnitRegex = /\]([a-zA-Z]+|%|)$/
 const containsExpandable = /[\{\}\[\]]/
-
-type Expression =
-  | {
-      type: '*'
-      yOffset: number
-      step: number
-      end: number
-    }
-  | {
-      type: '^'
-      coeffn: number
-      power: number
-      end: number
-    }
-  | {
-      type: '2'
-      yOffset: number
-      coeff2: number
-      coeff1: number
-      end: number
-    }
 
 export const range = (lead: number[], end: number): number[] => {
   return generateRange(determineRange(lead, end))
