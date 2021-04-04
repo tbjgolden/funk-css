@@ -45,7 +45,12 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "@babel/runtime": "^7.12.5"
+    "@babel/runtime": "^7.12.5",
+    "cssnano-preset-advanced": "^4.0.7",
+    "csstree-validator": "^2.0.0",
+    "mdn-data": "^2.0.17",
+    "postcss-csso": "^5.0.0",
+    "postcss-custom-properties": "^11.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -59,9 +64,12 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.1.0",
     "@testing-library/jest-dom": "^5.11.9",
+    "@types/css-tree": "^1.0.5",
+    "@types/cssnano": "^4.0.0",
     "@types/dedent": "^0.7.0",
     "@types/jest": "26.0.20",
     "@types/mkdirp": "^1.0.1",
+    "@types/postcss-custom-properties": "^9.1.0",
     "@typescript-eslint/eslint-plugin": "4.14.0",
     "@typescript-eslint/parser": "4.14.0",
     "babel-core": "6.26.3",
@@ -86,7 +94,8 @@
     "husky": "^4.3.8",
     "jest": "26.6.3",
     "mkdirp": "^1.0.4",
-    "postcss": "^8.2.7",
+    "postcss": "^8.2.9",
+    "postcss-colornorm": "^1.0.1",
     "prettier": "2.2.1",
     "pretty-quick": "^3.1.0",
     "regenerator-runtime": "0.13.7",

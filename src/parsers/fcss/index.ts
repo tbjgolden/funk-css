@@ -1,4 +1,4 @@
-import { StatementType, Settings, Evaluation, FunctionalRule } from '../types'
+import { StatementType, Settings, Evaluation, FunctionalRule } from './types'
 
 const numberRegex = /^[+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?$/
 const rangeRegex = /^\[([+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?)( ([+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?))*\.\.([+-]?(\d+|\d*\.\d+)([eE][+-]?\d+)?)\]$/

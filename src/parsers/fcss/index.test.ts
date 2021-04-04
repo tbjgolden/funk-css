@@ -6,7 +6,7 @@ import {
   stripComments,
   parseStatements,
   evaluate
-} from '.'
+} from './index'
 
 import fs from 'fs'
 import path from 'path'

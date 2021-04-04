@@ -79,7 +79,7 @@ const license =
 
 export default [
   {
-    input: './compiled/index.js',
+    input: './compiled/index.ts',
     external: getExternal('CJS_DEV'),
     output: {
       banner: license,
@@ -90,7 +90,7 @@ export default [
     plugins: getPlugins('CJS_DEV')
   },
   {
-    input: './compiled/index.js',
+    input: './compiled/index.ts',
     external: getExternal('ES'),
     output: {
       banner: license,
@@ -101,7 +101,7 @@ export default [
     plugins: getPlugins('ES')
   },
   {
-    input: './compiled/index.js',
+    input: './compiled/index.ts',
     external: getExternal('UMD_PROD'),
     output: {
       banner: license,
