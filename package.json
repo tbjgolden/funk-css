@@ -81,7 +81,7 @@
     "cross-env": "7.0.3",
     "css-property-parser": "^1.0.6",
     "css-tree": "^1.1.2",
-    "cssnano": "^4.1.10",
+    "cssnano": "4.1.10",
     "ctrl-scripts": "^0.1.0",
     "dedent": "^0.7.0",
     "del-cli": "3.0.1",

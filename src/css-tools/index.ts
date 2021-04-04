@@ -22,11 +22,11 @@ export const isValidDeclaration = (property: string, value: string) => {
 
     const { error } = lexer.matchProperty(property, parsedValue)
     if (error) {
-      if (
-        error.name === 'SyntaxMatchError' ||
-        error.name === 'SyntaxReferenceError'
-      ) {
-      }
+      // if (
+      //   error.name === 'SyntaxMatchError' ||
+      //   error.name === 'SyntaxReferenceError'
+      // ) {
+      // }
       return false
     }
   } catch (error) {
