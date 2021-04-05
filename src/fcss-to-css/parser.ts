@@ -396,7 +396,8 @@ const defaultSettings = {
 
 const validSettings = new Set(Object.keys(defaultSettings))
 
-export const evaluate = (fcss: string): Evaluation => {
+// parses and evaluates
+export const parse = (fcss: string): Evaluation => {
   const settings: Settings = defaultSettings
   const variables = new Map<string, string[]>()
   const functionalRules: FunctionalRule[] = []

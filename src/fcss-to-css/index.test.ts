@@ -5,7 +5,7 @@ import {
   parseCombinations,
   stripComments,
   parseStatements,
-  evaluate,
+  parse,
   generate,
   getPropertyAbbreviation
 } from '.'
@@ -211,10 +211,8 @@ test('parseStatements', () => {
   )
 })
 
-test('evaluate', () => {
-  expect(evaluate(fixture('a.fcss'))).toEqual(
-    JSON.parse(fixture('a.rules.json'))
-  )
+test('parse', () => {
+  expect(parse(fixture('a.fcss'))).toEqual(JSON.parse(fixture('a.rules.json')))
 })
 
 test('generate', () => {

@@ -36,26 +36,6 @@ export const isValidDeclaration = (property: string, value: string) => {
   return true
 }
 
-// assumes no CSS variables (i.e. they have already been substituted for values)
-export const getAllValidDeclarations = (css: string): [string, string][] => {
-  const ast = parse(css, { parseValue: false })
-
-  const declarations: [string, string][] = []
-  walk(ast, {
-    visit: 'Declaration',
-    enter: (node) => {
-      const property = node.property
-      const value = (node.value as Raw).value
-
-      if (isValidDeclaration(property, value)) {
-        declarations.push([property, value])
-      }
-    }
-  })
-
-  return declarations
-}
-
 const processor = postcss([
   postcssCustomProperties({
     preserve: false

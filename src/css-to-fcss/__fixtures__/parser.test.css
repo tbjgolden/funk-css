@@ -1,0 +1,54 @@
+@charset "UTF-8";
+@import 'global.css';
+
+.lightgray {
+  color: lightgray;
+  background-color: black;
+}
+@supports (display: flex) and (-webkit-appearance: checkbox) {
+  .red {
+    color: red;
+  }
+}
+@font-face {
+  font-family: 'MyWebFont';
+  src:  url('myfont.woff2') format('woff2'),
+        url('myfont.woff') format('woff');
+}
+@keyframes pulse {
+  0% {
+    background-color: #001f3f;
+  }
+  100% {
+    background-color: #ff4136;
+  }
+}
+@page :first {
+  margin: 1in;
+}
+@media (min-width: 384px) and screen {
+  .blue {
+    color: blue;
+  }
+
+  @media (max-width: 768px) {
+    .green {
+      color: green;
+    }
+  }
+
+  .yellow {
+    color: yellow;
+  }
+}
+@media (min-width: 768px) {
+  .white {
+    color: white;
+  }
+}
+.black {
+  color: black;
+}
+01134 {
+  hello: world;
+}

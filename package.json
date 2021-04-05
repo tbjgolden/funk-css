@@ -66,6 +66,7 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@types/css-tree": "^1.0.5",
     "@types/cssnano": "^4.0.0",
+    "@types/csso": "^3.5.1",
     "@types/dedent": "^0.7.0",
     "@types/jest": "26.0.20",
     "@types/mkdirp": "^1.0.1",

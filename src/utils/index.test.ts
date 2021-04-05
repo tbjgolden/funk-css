@@ -1,4 +1,4 @@
-import { isValidDeclaration, getAllValidDeclarations, normalizeCSS } from '.'
+import { isValidDeclaration } from '.'
 import fs from 'fs'
 import path from 'path'
 
@@ -9,16 +9,4 @@ test('isValidDeclaration', () => {
   for (const [p, v, expected] of JSON.parse(fixture('test.json'))) {
     expect(isValidDeclaration(p, v)).toBe(expected)
   }
-})
-
-test('getAllValidDeclarations', () => {
-  expect(getAllValidDeclarations(fixture('bootstrap.min.css'))).toEqual(
-    JSON.parse(fixture('bootstrap.json'))
-  )
-})
-
-test('normalizeCSS', async () => {
-  expect(
-    getAllValidDeclarations(await normalizeCSS(fixture('bootstrap.css')))
-  ).toEqual(JSON.parse(fixture('bootstrap.norm.json')))
 })
