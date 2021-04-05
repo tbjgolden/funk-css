@@ -44,13 +44,12 @@ test('parseRules', () => {
 test('normalizeCSS', async () => {
   const actual = await normalizeCSS(fixture('bootstrap.css'))
   const expected = fixture('bootstrap.norm.css').trim()
-  if (Math.random() < -1) console.log(actual, expected)
-  // expect(actual).toBe(expected)
+  expect(actual).toBe(expected)
 })
 
 test('parse', async () => {
   const actual = await parse(fixture('bootstrap.css'))
+  fs.writeFileSync('a.json', JSON.stringify(actual, null, 2))
   const expected = JSON.parse(fixture('bootstrap.norm.json'))
-  if (Math.random() < -1) console.log(actual, expected)
-  // expect(actual).toEqual(expected)
+  expect(actual).toEqual(expected)
 })
