@@ -49,7 +49,6 @@ test('normalizeCSS', async () => {
 
 test('parse', async () => {
   const actual = await parse(fixture('bootstrap.css'))
-  fs.writeFileSync('a.json', JSON.stringify(actual, null, 2))
   const expected = JSON.parse(fixture('bootstrap.norm.json'))
   expect(actual).toEqual(expected)
 })
